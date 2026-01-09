@@ -1,5 +1,21 @@
 /* pages/SavedCountries.css */
 
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    /* colors */
+    --dark-blue: #111517;
+    --light-grey: #fafafa;
+    --white: #ffffff;
+    --dark-grey: #858585;
+    --purple: #7672ce;
+    /*  spacing styles*/
+    --border-radius: 8px;
+    --box-shadow: 0px 0px 6px 2px hsl(0, 0%, 80%);
+    --box-shadow-hover: 0px 0px 10px 5px hsl(0, 0%, 60%);
+}
 .saved-page {
   display: flex;
   gap: 48px;
@@ -40,16 +56,16 @@
 }
 
 .profile-textarea {
-  resize: none; /* looks like the static box in figma */
+  resize: none; 
   min-height: 140px;
 }
 
 .profile-submit {
-  width: 52px;          /* small button like screenshot */
+  width: 52px;         
   padding: 6px 8px;
   font-size: 11px;
-  border: 1px solid #6b6bff;
-  background: #6b6bff;
+  border: 1px solid var(--purple);
+  background: var(--purple);
   color: white;
   border-radius: 2px;
   cursor: pointer;
@@ -76,7 +92,7 @@
 }
 
 /* Mobile: stack and use full width */
-@media (max-width: 600px) {
+@media (max-width: 375px) {
   .saved-page {
     flex-direction: column;
     padding: 16px;
