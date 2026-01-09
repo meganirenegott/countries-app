@@ -7,7 +7,7 @@
 }
 
 .saved-left {
-  width: 420px; /* gives that left-column look */
+  width: 420px; 
 }
 
 .saved-title {
@@ -40,12 +40,12 @@
 }
 
 .profile-textarea {
-  resize: none; /* looks like the static box in figma */
+  resize: none; 
   min-height: 140px;
 }
 
 .profile-submit {
-  width: 52px;          /* small button like screenshot */
+  width: 52px;         
   padding: 6px 8px;
   font-size: 11px;
   border: 1px solid #6b6bff;
@@ -75,19 +75,30 @@
   border: 0;
 }
 
-/* Mobile: stack and use full width */
-@media (max-width: 600px) {
-  .saved-page {
-    flex-direction: column;
-    padding: 16px;
+/* media queries */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
   }
 
-  .saved-left {
-    width: 100%;
-    max-width: 420px;
+  .header__inner {
+    height: 64px;
   }
 
-  .saved-right {
-    display: none;
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-link {
+    font-size: 12px;
+  }
+
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page {
+    padding: 24px 0;
   }
 }
