@@ -101,7 +101,7 @@ body {
 /* media queries
 
 /* ✅ Tablet: 2 columns, less padding */
-@media (max-width: 900px) {
+@media (max-width: 1440px) {
   .container {
     padding: 0 40px;
   }
@@ -117,7 +117,7 @@ body {
 }
 
 /* ✅ Mobile: 1 column, tight padding like the screenshot */
-@media (max-width: 520px) {
+@media (max-width: 375px) {
   .container {
     padding: 0 16px;
   }
@@ -143,3 +143,4 @@ body {
     padding: 24px 0;
   }
 }
+

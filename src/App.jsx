@@ -4,6 +4,8 @@ import CountryDetails from "./pages/CountryDetails";
 import SavedCountries from "./pages/SavedCountries";
 import dataFromLocalFile from "../localData";
 import "./App.css";
+import "./SavedCountries.css";
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
       {/* header contains NavBar */}
       <header className="header">
         <Link to="/" className="header-title">
-          Where in the world?
+         <h2> Where in the world?</h2>
         </Link>
 
         <Link to="/saved" className="header-link">
