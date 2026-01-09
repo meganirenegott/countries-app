@@ -116,7 +116,7 @@ body {
   }
 }
 
-/* ✅ Mobile: 1 column
+/* /* ✅ Mobile: 1 column */
 @media (max-width: 375px) {
   .container {
     padding: 0 16px;
