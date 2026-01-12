@@ -1,0 +1,146 @@
+
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    /* colors */
+    --dark-blue: #111517;
+    --light-grey: #fafafa;
+    --white: #ffffff;
+    --dark-grey: #858585;
+    --purple: #7672ce;
+    /*  spacing styles*/
+    --border-radius: 8px;
+    --box-shadow: 0px 0px 6px 2px hsl(0, 0%, 80%);
+    --box-shadow-hover: 0px 0px 10px 5px hsl(0, 0%, 60%);
+}
+
+body {
+    font-family: Nunito Sans;
+    font-size: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem;
+  background-color: var(--white);
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.header-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+/* Country Card Styles */
+/* Grid layout */
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px;
+  padding: 48px 80px;
+  background-color: #fafafa;
+}
+
+/* Card */
+.country-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.country-card :hover {
+     --box-shadow-hover: var(--box-shadow-hover);
+}
+
+
+/* Flag */
+.country-card__flag {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.country-card__content {
+  padding: 24px;
+}
+
+.country-card__name {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Metadata text */
+.country-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.country-card strong {
+  font-weight: 600;
+}
+
+
+
+/* media queries
+
+/* ✅ Tablet: 2 columns, less padding */
+@media (max-width: 1440px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .countries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .page {
+    padding: 32px 0;
+  }
+}
+
+ /* ✅ Mobile: 1 column */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header__inner {
+    height: 64px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-link {
+    font-size: 12px;
+  }
+
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page {
+    padding: 24px 0;
+  }
+}
+

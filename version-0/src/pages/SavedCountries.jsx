@@ -1,6 +1,6 @@
 // pages/SavedCountries.jsx
 import { useState } from "react";
-import "./SavedCountries.css";
+import "../SavedCountries.css";
 
 function SavedCountries() {
   const [form, setForm] = useState({

@@ -1,21 +1,5 @@
 /* pages/SavedCountries.css */
 
-/* font import */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-
-:root {
-    /* colors */
-    --dark-blue: #111517;
-    --light-grey: #fafafa;
-    --white: #ffffff;
-    --dark-grey: #858585;
-    --purple: #7672ce;
-    /*  spacing styles*/
-    --border-radius: 8px;
-    --box-shadow: 0px 0px 6px 2px hsl(0, 0%, 80%);
-    --box-shadow-hover: 0px 0px 10px 5px hsl(0, 0%, 60%);
-}
 .saved-page {
   display: flex;
   gap: 48px;
@@ -23,7 +7,7 @@
 }
 
 .saved-left {
-  width: 420px; /* gives that left-column look */
+  width: 420px; 
 }
 
 .saved-title {
@@ -64,8 +48,8 @@
   width: 52px;         
   padding: 6px 8px;
   font-size: 11px;
-  border: 1px solid var(--purple);
-  background: var(--purple);
+  border: 1px solid #6b6bff;
+  background: #6b6bff;
   color: white;
   border-radius: 2px;
   cursor: pointer;
@@ -91,19 +75,30 @@
   border: 0;
 }
 
-/* Mobile: stack and use full width */
+/* media queries */
 @media (max-width: 375px) {
-  .saved-page {
-    flex-direction: column;
-    padding: 16px;
+  .container {
+    padding: 0 16px;
   }
 
-  .saved-left {
-    width: 100%;
-    max-width: 420px;
+  .header__inner {
+    height: 64px;
   }
 
-  .saved-right {
-    display: none;
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-link {
+    font-size: 12px;
+  }
+
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page {
+    padding: 24px 0;
   }
 }
