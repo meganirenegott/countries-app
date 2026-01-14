@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function CountryCard({ country }) {
   const {
     flags,
@@ -8,6 +11,7 @@ function CountryCard({ country }) {
   } = country;
 
   return (
+    <Link to="/country-details">
     <article className="country-card">
       <img
         className="country-card__flag"
@@ -34,6 +38,7 @@ function CountryCard({ country }) {
         </p>
       </div>
     </article>
+    </Link>
   );
 }
 

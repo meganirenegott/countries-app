@@ -28,7 +28,7 @@ function App() {
           element={<Home countriesData={dataFromLocalFile} />}
         />
         <Route path="/saved" element={<SavedCountries />} />
-        <Route path="/country/:code" element={<CountryDetails />} />
+        <Route path="/country/:countryName" element={<CountryDetails />} />
       </Routes>
     </>
   );
