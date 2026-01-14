@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 function CountryCard({ country }) {
@@ -10,8 +10,10 @@ function CountryCard({ country }) {
     capital,
   } = country;
 
+
+
   return (
-    <Link to="/country-details">
+    <Link to={`/country-details/${countryName}`}>
     <article className="country-card">
       <img
         className="country-card__flag"
