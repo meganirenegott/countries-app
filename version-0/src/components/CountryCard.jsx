@@ -1,4 +1,4 @@
-function CountryCard({ country }) {
+function CountryCard({ key, country }) {
   const {
     flags,
     name,
@@ -8,7 +8,7 @@ function CountryCard({ country }) {
   } = country;
 
   return (
-    <article className="country-card">
+    <article className="country-card" key={key}>
       <img
         className="country-card__flag"
         src={flags.svg}

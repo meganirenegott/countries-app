@@ -10,15 +10,18 @@ function SavedCountries() {
     bio: "",
   });
 
+  
   function handleChange(e) {
+    // destructure name and value from event target
     const { name, value } = e.target;
+    // updates specific field in the useState variable named form
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    // For now: confirm your handler works
+    // submitting to console for now
     console.log("Submitted profile:", form);
 
     // resets form after submit
@@ -98,9 +101,6 @@ function SavedCountries() {
           </form>
         </section>
       </div>
-
-      {/* Right side intentionally blank to match the screenshot spacing */}
-      <div className="saved-right" />
     </main>
   );
 }

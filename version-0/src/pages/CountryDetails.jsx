@@ -1,4 +1,4 @@
 // pages/CountryDetails.jsx
-export default function CountryDetail() {
-  return <h1>CountryDetail Page</h1>;
+export default function CountryDetails() {
+  return <h1>CountryDetails Page</h1>;
 }
