@@ -6,6 +6,6 @@ function CountryDetails({ countries }) {
   const countryName = useParams().countryName;
 }
 
-export default function CountryDetail() {
+export default function CountryDetail() {https://us06web.zoom.us/
   return <h1>CountryDetail Page</h1>;
 }

@@ -6,7 +6,7 @@ import CountryCard from "../components/CountryCard";
 function Home({ countriesData = [] }) {
   // sortedCountries is a new variable to hold the sorted version of the country data
   // spread operator takes every element inside the countriesData and creates a new arrray in memory, chose to do this instead of .sort() which mutates the original array
-  // ((a,b) => is the comparison function, with a and b being the common name of two contries, this function is called many times
+  // ((a,b) => is the comparison function, with a and b being the common name of two countries, this function is called many times
   // localeCompare is the actual alphabetical comparison, a string method that compares two strings and also preserves the language rules and accents
   const sortedCountries = [...countriesData].sort((a, b) =>
     a.name.common.localeCompare(b.name.common)
