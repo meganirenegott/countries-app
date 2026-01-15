@@ -59,8 +59,8 @@ function App() {
         <Route
           path="/" element={<Home countriesData={countriesData} />}
         />
-        <Route path="/saved" element={<SavedCountries />} />
-        <Route path="/country-details/:countryName" element={<CountryDetails />} />
+        <Route path="/saved" element={<SavedCountries countriesData={countriesData} />} />
+        <Route path="/country-details/:countryName" element={<CountryDetails countriesData={countriesData} />} />
       </Routes>
     </>
   );
