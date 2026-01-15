@@ -13,7 +13,7 @@ function CountryCard({ country }) {
 
 
   return (
-    <Link to={`/country/${country.name.common}`}>
+    <Link to={`/country-details/${country.name.common}`}>
     <article className="country-card">
       <img
         className="country-card__flag"
