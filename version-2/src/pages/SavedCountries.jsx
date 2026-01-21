@@ -25,7 +25,7 @@ function SavedCountries({countriesData}) {
     setForm({ fullName: "", email: "", country: "", bio: "" });
   }
 
-  // code block to useEffect getNewUserData() from stackblitz lecture for calling API, fetch url is getting base API from vite.config.js file for API privacy
+  // code block (API CALL to useEffect getNewUserData() ) from stackblitz lecture for calling API, fetch url is getting base API from vite.config.js file for API privacy
   // get newest user form data
   const getNewestUserData = async () => {
     try {
