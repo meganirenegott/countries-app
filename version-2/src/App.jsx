@@ -43,6 +43,8 @@ function App() {
 
   return (
     <>
+      {/* conditional rendering the welcome message */}
+      {userInfo && <h2>Welcome {userInfo.fullName}</h2>}
       {/* header contains NavBar */}
       <header className="header">
         <Link to="/" className="header-title">
