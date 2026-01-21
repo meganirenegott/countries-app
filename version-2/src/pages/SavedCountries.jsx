@@ -25,6 +25,33 @@ function SavedCountries({countriesData}) {
     setForm({ fullName: "", email: "", country: "", bio: "" });
   }
 
+  // code block to useEffect getNewUserData() from stackblitz lecture for calling API, fetch url is getting base API from vite.config.js file for API privacy
+  // get newest user form data
+  const getNewestUserData = async () => {
+    try {
+        const response = await fetch("/api/get-newest-user", {
+          method: "GET",
+        })
+        const data = await response.json();
+        const userData = data[0];
+        console.log('data', data[0]);
+        setNewestUserData({
+          fullName: userData.name,
+          email: userData.email,
+          country: userData.country_name,
+          bio: userData.bio,
+        });
+        console.log(newestUserData.fullName);
+    }
+  catch (error) {
+    console.log(error)
+  }
+};
+
+useEffect(() => {
+  getNewestUserData();
+}, []);
+
   return (
     <main className="saved-page">
       <div className="saved-left">
