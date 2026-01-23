@@ -1,5 +1,5 @@
 // pages/SavedCountries.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../SavedCountries.css";
 
 function SavedCountries({countriesData}) {
@@ -10,11 +10,15 @@ function SavedCountries({countriesData}) {
     bio: "",
   });
 
+  const [newestUserData, setNewestUserData] = useState(null);
+
+// update the state when input values change
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
+  // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -53,10 +57,11 @@ useEffect(() => {
 }, []);
 
   return (
+    
     <main className="saved-page">
       <div className="saved-left">
         <h2 className="saved-title">My Saved Countries</h2>
-
+        {newestUserData && <h2>Welcome {newestUserData.fullName}</h2>}
         <section className="profile-section">
           <h3 className="profile-title">My Profile</h3>
 
