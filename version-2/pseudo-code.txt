@@ -46,15 +46,14 @@ TYPE OF HTTP REQUEST (GET OR POST): ------ POST
 API ENDPOINT: ------ /add-one-user
 
 REQUEST BODY DATA TYPE (if applicable): ---- Object
-REQUEST BODY (if applicable): ------ [
+REQUEST BODY (if applicable): ------ 
   {
-    "user_id": 42,
     "name": "John Smith",
     "country_name": "Canada",
     "email": "john@example.com",
     "bio": "Another bio"
   }
-]
+
 
 RESPONSE DATA TYPE: ------ String
 RESPONSE: ------ Success! User has been added.
@@ -62,12 +61,12 @@ RESPONSE: ------ Success! User has been added.
 
 ❓ WHEN: ------ when the user submits the form
 
-❓ WHERE: ------ the country details page which contains the form 
+❓ WHERE: ------ the function we write will run from the handleSubmit() function
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
+Step 1: ------ write a function to store Form Data call it userFormData, async function, using await 
+Step 2: ------ use a post request
+Step 3: ------ call the formUserData from handleSubmit()
 Add more steps as needed!
 
 ========================
@@ -150,7 +149,7 @@ API ENDPOINT: ------ /get-all-saved-countries
 REQUEST BODY DATA TYPE (if applicable): ------ none
 REQUEST BODY (if applicable): ------ none
 
-RESPONSE DATA TYPE: ------
+RESPONSE DATA TYPE: ------ array of objects
 RESPONSE: ------ [
   {
     "country_name": "Japan"
@@ -160,9 +159,9 @@ RESPONSE: ------ [
   }
 ]
 
-❓ WHEN: ------
+❓ WHEN: ------ on load for Saved Countries Page
 
-❓ WHERE: ------
+❓ WHERE: ------ Saved Countries page
 
 ❓ HOW:
 Step 1: ------
