@@ -46,11 +46,7 @@ TYPE OF HTTP REQUEST (GET OR POST): ------ POST
 API ENDPOINT: ------ /add-one-user
 
 REQUEST BODY DATA TYPE (if applicable): ---- Object
-REQUEST BODY (if applicable): ------ N/A
-
-RESPONSE DATA TYPE: ------ String
-RESPONSE: ------ 
-[
+REQUEST BODY (if applicable): ------ [
   {
     "user_id": 42,
     "name": "John Smith",
@@ -59,6 +55,10 @@ RESPONSE: ------
     "bio": "Another bio"
   }
 ]
+
+RESPONSE DATA TYPE: ------ String
+RESPONSE: ------ Success! User has been added.
+
 
 ❓ WHEN: ------ when the user submits the form
 
@@ -119,17 +119,19 @@ Add more steps as needed!
 
 ❓ WHAT...
 TYPE OF HTTP REQUEST (GET OR POST): ------  Post
-API ENDPOINT: ------ 
+API ENDPOINT: ------ /save-one-country
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+REQUEST BODY DATA TYPE (if applicable): ------ object
+REQUEST BODY (if applicable): ------ {
+  "country_name": "Brazil"
+}
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+RESPONSE DATA TYPE: ------ string
+RESPONSE: ------ Success! The country is saved.
 
-❓ WHEN: ------
+❓ WHEN: ------ the user wants to add a country
 
-❓ WHERE: ------
+❓ WHERE: ------ SavedCountries.jsx
 
 ❓ HOW:
 Step 1: ------
@@ -145,7 +147,7 @@ Add more steps as needed!
 TYPE OF HTTP REQUEST (GET OR POST): ------  Get
 API ENDPOINT: ------ /get-all-saved-countries
 
-REQUEST BODY DATA TYPE (if applicable): ------ array of objects
+REQUEST BODY DATA TYPE (if applicable): ------ none
 REQUEST BODY (if applicable): ------ none
 
 RESPONSE DATA TYPE: ------
@@ -182,18 +184,14 @@ TYPE OF HTTP REQUEST (GET OR POST): ------  Post
 API ENDPOINT: ------ /update-one-country-count
 
 REQUEST BODY DATA TYPE (if applicable): ------  array of objects
-REQUEST BODY (if applicable): ------  yes
+REQUEST BODY (if applicable): ------  {
+  "country_name": "France"
+}
 
 RESPONSE DATA TYPE: ------ string
 RESPONSE: ------ {
- [
-  {
-    "country_name": "Japan"
-  },
-  {
-    "country_name": "Germany"
-  }
-]
+  "count": 3
+}
 }
 
 ❓ WHEN: ------  when the user clicks the save country button
