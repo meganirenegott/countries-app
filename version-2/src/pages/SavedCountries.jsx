@@ -9,18 +9,47 @@ function SavedCountries({countriesData}) {
     country: "",
     bio: "",
   });
-
   const [newestUserData, setNewestUserData] = useState(null);
 
-// update the state when input values change
+  // update the state when input values change
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
+  // write a function for storing Form data
+   const storeUserData = async (data) => {
+    const response = await fetch(
+      'https://backend-answer-keys.onrender.com/add-one-user',
+      {
+        // type of HTTP request
+        method: 'POST',
+        // Specify the type of data being sent
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // Use stringify method to format data to be sent to backend
+        // use dot notation to get the correct data
+        body: JSON.stringify({
+          name: data.fullName,
+          country_name: data.country,
+          email: data.email,
+          bio: data.bio,
+        }),
+      }
+    );
+    // If the response is text type, then use response.text()
+    // If the response is json data, use response.json()
+    const result = await response.text();
+    console.log('result', result);
+  };
+
   // Handle form submission
-  function handleSubmit(e) {
+ // call the form data storing function in here
+  const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
+    storeUserData(formData);
 
     // For now: confirm your handler works
     console.log("Submitted profile:", form);
@@ -45,7 +74,6 @@ function SavedCountries({countriesData}) {
           country: userData.country_name,
           bio: userData.bio,
         });
-        console.log(newestUserData.fullName);
     }
   catch (error) {
     console.log(error)
