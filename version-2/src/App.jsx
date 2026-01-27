@@ -46,7 +46,7 @@ function App() {
       {/* header contains NavBar */}
       <header className="header">
         <Link to="/" className="header-title">
-         <h2> Where in the world?</h2>
+         Where in the world?
         </Link>
 
         <Link to="/saved" className="header-link">

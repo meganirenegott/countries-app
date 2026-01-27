@@ -1,36 +1,65 @@
 // pages/CountryDetails.jsx
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 import "../App.css";
 
 
 function CountryDetails({ countriesData }) {
+  const navigate = useNavigate();
   // get this country's name from the URL parameter
   const countryName = useParams().countryName;
   // search for a matching country in countriesData that has the same name as the param being passed in
   const userSelectedCountry = countriesData.find((countryInfo) => (countryInfo.name.common === countryName))
-  // const borderCountryCodes = userSelectedCountry.borders;
-  // const borderCountryNames = borderCountryCodes.map((countryCode) => countriesData.find(countryInfo))
+  
+  // Handle case where country data hasn't loaded yet
+  if (!userSelectedCountry) {
+    return <div className="country-details-loading">Loading...</div>;
+  }
 
+  const handleBack = () => {
+    navigate(-1); // Go back to previous page
+  };
 
-
-
-
-
-  // we assume a match will always be found (no try catch)
-  /* place our countryCard componenet passing in the user selected countries information,
-       parameters key is userSelectedCountry.cca3 because this is unique to each country, country is userSelectedCountry   */
   return (
-    <>
-      <div>
-        <img src={userSelectedCountry.flags.svg}></img>
-        <h2>{userSelectedCountry.name.common}</h2>
-        <button className="saveCountry">Save</button>
-        <h3>Population: {userSelectedCountry.population.toLocaleString("en-US")}</h3>
-        <h3>Capital: {userSelectedCountry.capital[0]}</h3>
-        <h3>Region: {userSelectedCountry.region}</h3>
-        {/* <h3>Border Countries: { userSelectedCountry.borders[]}</h3> */}
-     </div> 
-    </>
+    <div className="country-details-page">
+      {/* Back button */}
+      <button className="back-button" onClick={handleBack}>
+        ← Back
+      </button>
+
+      {/* Main content container */}
+      <div className="country-details-container">
+        {/* Flag image */}
+        <div className="country-details-flag-wrapper">
+          <img 
+            className="country-details-flag"
+            src={userSelectedCountry.flags.svg}
+            alt={`Flag of ${userSelectedCountry.name.common}`}
+          />
+        </div>
+
+        {/* Country information */}
+        <div className="country-details-info">
+          <h1 className="country-details-title">{userSelectedCountry.name.common}</h1>
+          
+          <button className="save-button">Save</button>
+
+          <div className="country-details-stats">
+            <p>
+              <strong>Population:</strong> {userSelectedCountry.population.toLocaleString("en-US")}
+            </p>
+            <p>
+              <strong>Region:</strong> {userSelectedCountry.region}
+            </p>
+            <p>
+              <strong>Capital:</strong> {userSelectedCountry.capital?.[0] ?? "N/A"}
+            </p>
+            <p>
+              <strong>Viewed:</strong> 20 times
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
