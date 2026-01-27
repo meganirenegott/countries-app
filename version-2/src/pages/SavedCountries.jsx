@@ -20,7 +20,7 @@ function SavedCountries({countriesData}) {
   // write a function for storing Form data
    const storeUserData = async (data) => {
     const response = await fetch(
-      'https://backend-answer-keys.onrender.com/add-one-user',
+      'api/add-one-user',
       {
         // type of HTTP request
         method: 'POST',
@@ -48,8 +48,8 @@ function SavedCountries({countriesData}) {
  // call the form data storing function in here
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    storeUserData(formData);
+    console.log(form);
+    storeUserData(form);
 
     // For now: confirm your handler works
     console.log("Submitted profile:", form);
