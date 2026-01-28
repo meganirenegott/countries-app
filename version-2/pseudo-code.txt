@@ -133,10 +133,15 @@ RESPONSE: ------ Success! The country is saved.
 ❓ WHERE: ------ SavedCountries.jsx
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
+Step: 0: Make the save countries button/ UI
+Step 1: ------ write a function to store Saved Countries Data, async function, using await
+Step 2: ------ use a post request with the post method, do a stringify situation, event handler is going to be when the user clicks the "save countries" button
+Step 3: ------ call the saveOneCountry() function from onClick
 Add more steps as needed!
+Step 4: ---- test your countries, check console's network tab to see if the API fetch is working as expected
+Step 5: ----- expected behavior looks like the user selected country shows up in the saved countries page
+(you can use Postman at any step, it's helpful even before you write code to see what the data you're working with looks like, to help visualize the data as it comes in)
+
 
 ========================
 🔶 RETRIEVING SAVED COUNTRIES DATA
@@ -164,9 +169,11 @@ RESPONSE: ------ [
 ❓ WHERE: ------ Saved Countries page
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
+Step 1: ------  someone will click on the save countries button
+Step 2: ------  make a function called displayUserSavedCountries(), it's going to be an async function, this function will use fetch to send a GET request to the endpoint /get-all-saved-countries
+once it gets that data, the function saves the data to a state variable which we will call userSavedCountries
+Step 3: ------  we will use useEffect to call displayUserSavedCountries() onClick
+Step 4: ------ render the userSavedCountries in JSX
 Add more steps as needed!
 
 =================================
@@ -198,7 +205,11 @@ RESPONSE: ------ {
 ❓ WHERE: ------ on the country details page
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
+
+Step 0: ------ write a function updateUserCountryCount() to post the the endpoint /update-one-country-count using async and await, useEffect is updated when the user clicks on the 
+country card to view it
+Step 1: ------ write a function called displayUserCountryViewCount() get the updated country count and rerender the count to update the UI
+Step 2: ------ test your userCountryViewCount()
+Step 3: ------  expected behavior looks like the count increasing by +1 on view
+Step 4: ------  be sure remove strict mode fron the main.jsx file that vite adds on setup, so country count is incrementing in values of 1 instead of 2 
+
