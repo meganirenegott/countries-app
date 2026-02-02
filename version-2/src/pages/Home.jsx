@@ -5,6 +5,7 @@ import CountryCard from "../components/CountryCard";
 // function to make a copy of the countries array, then reorder it alphabetically based on the countries common name, without mutating the original data
 function Home({ countriesData = [] }) {
   const [selectedRegion, setSelectedRegion] = useState("All");
+  const [searchByCountry, setSearchByCountry] = useState("");
 
   // Pull out regions from the countries data, keep the valid ones
   const countriesRegions = countriesData
@@ -14,10 +15,15 @@ function Home({ countriesData = [] }) {
   // Make a list of unique regions from the full list of region data, add an "All" option as well
   const uniqueRegions = ["All", ...new Set(countriesRegions)];
 
-  // Filter countries by selected region, but don't filter if we are considering "All" regions
-  const filteredCountries = selectedRegion === "All" 
-    ? countriesData 
-    : countriesData.filter((country) => country.region === selectedRegion);
+  // Filter countries by selected region, but don't filter by region if we are considering "All" regions
+  // Then filter countries by the specified searchByCountry search term
+  const filteredCountries = countriesData
+    .filter((country) => 
+      selectedRegion === "All" || country.region === selectedRegion
+    )
+    .filter((country) => 
+      country.name.common.toLowerCase().includes(searchByCountry.toLowerCase())
+    );
 
   // sortedCountries is a new variable to hold the sorted version of the country data
   // spread operator takes every element inside the filteredCountries and creates a new arrray in memory, chose to do this instead of .sort() which mutates the original array
@@ -29,6 +35,20 @@ function Home({ countriesData = [] }) {
 
   return (
     <div>
+      {/* Search Box */}
+      <div className="search-container">
+        <label htmlFor="country-search">
+          Search Countries:
+        </label>
+        <input
+          type="text"
+          id="country-search"
+          value={searchByCountry}
+          onChange={(e) => setSearchByCountry(e.target.value)}
+          placeholder="Type a country name..."
+        />
+      </div>
+
       {/* Region Filter */}
       <div className="filter-container">
         <label htmlFor="region-filter">
