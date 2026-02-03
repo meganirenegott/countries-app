@@ -10,7 +10,7 @@ function SavedCountries({countriesData}) {
     bio: "",
   });
   const [newestUserData, setNewestUserData] = useState(null);
-
+  const [savedCountries, setSavedCountries] = useState([]);
   // update the state when input values change
   function handleChange(e) {
     const { name, value } = e.target;
@@ -83,6 +83,34 @@ function SavedCountries({countriesData}) {
 useEffect(() => {
   getNewestUserData();
 }, []);
+
+  
+
+
+//   // get savedCountries get request
+  const SavedCountries = async () => {
+    try {
+      const response = await fetch(
+        '/api/get-all-saved-countries',
+        {
+          method: 'GET',
+        }
+      );
+        const data = await response.json();
+     setSavedCountries(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    SavedCountries();
+  }, []);
+
+  
+  
+  
+  
 
   return (
     
