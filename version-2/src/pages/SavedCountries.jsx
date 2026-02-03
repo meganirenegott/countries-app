@@ -1,8 +1,9 @@
 // pages/SavedCountries.jsx
 import { useState, useEffect } from "react";
 import "../SavedCountries.css";
+import CountryCard from "../components/CountryCard";
 
-function SavedCountries({countriesData}) {
+function SavedCountries({ countriesData }) {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
@@ -88,7 +89,7 @@ useEffect(() => {
 
 
 //   // get savedCountries get request
-  const SavedCountries = async () => {
+  const getSavedCountries = async () => {
     try {
       const response = await fetch(
         '/api/get-all-saved-countries',
@@ -96,24 +97,43 @@ useEffect(() => {
           method: 'GET',
         }
       );
-        const data = await response.json();
-     setSavedCountries(data);
+      const data = await response.json();
+      setSavedCountries(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    SavedCountries();
+    getSavedCountries();
   }, []);
 
   
-  
-  
+  const matchedSavedCountries = savedCountries.map((item) => {
+    return countriesData.find(
+      (country) => country.name?.common === item.country_name
+    );
+  })
+  console.log(matchedSavedCountries);
   
 
   return (
-    
+// render saved countries
+<>
+
+{/* Countries Grid */}
+      <div className="countries-grid">
+        {matchedSavedCountries.map((country) => (
+          <CountryCard
+            key={country.cca3}
+            country={country}
+          />
+        ))}
+      </div>
+
+
+
+{/* render the form */}
     <main className="saved-page">
       <div className="saved-left">
         <h2 className="saved-title">My Saved Countries</h2>
@@ -189,8 +209,9 @@ useEffect(() => {
 
       {/* Right side intentionally blank to match the screenshot spacing */}
       <div className="saved-right" />
-    </main>
-  );
+      </main>
+      </>
+      );
 }
 
 export default SavedCountries;
