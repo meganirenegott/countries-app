@@ -1,15 +1,51 @@
 // pages/CountryDetails.jsx
 import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
 import "../App.css";
 
 
 function CountryDetails({ countriesData }) {
+  const [viewCount, setViewCount] = useState(null);
   const navigate = useNavigate();
   // get this country's name from the URL parameter
   const countryName = useParams().countryName;
+
   // search for a matching country in countriesData that has the same name as the param being passed in
   const userSelectedCountry = countriesData.find((countryInfo) => (countryInfo.name.common === countryName))
-  
+
+  // set up the call to the update-one-country-count API to count this visit against the correct country
+  const countCountryVisit = async () => {
+    const response = await fetch(
+      '/api/update-one-country-count',
+      {
+        // type of HTTP request
+        method: 'POST',
+        // Specify the type of data being sent
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // Use stringify method to format data to be sent to backend
+        // use dot notation to get the correct data
+        body: JSON.stringify({
+          "country_name": userSelectedCountry.name.common,
+        }),
+      }
+    );
+
+    // Pull out the country view count from the json that comes back, and send it to setViewCount()
+    const json = await response.json();
+    const countryViewCount = json.count;
+    console.log('countryViewCount', countryViewCount);
+    setViewCount(countryViewCount);
+  };
+
+  // Establish a useEffect trigger to call countCountryVisit() when the page loads, and also whenever userSelectedCountry.name.common changes
+  // Add a check to see if userSelectedCountry even exists and return out if that is the case
+  useEffect(() => {
+    if (!userSelectedCountry) return;
+    countCountryVisit();
+  }, [userSelectedCountry?.name?.common]);
+
   // Handle case where country data hasn't loaded yet
   if (!userSelectedCountry) {
     return <div className="country-details-loading">Loading...</div>;
@@ -85,7 +121,8 @@ function CountryDetails({ countriesData }) {
               <strong>Capital:</strong> {userSelectedCountry.capital?.[0] ?? "N/A"}
             </p>
             <p>
-              <strong>Viewed:</strong> 20 times
+              {/* if viewCount is null because we're still loading the count from the API, show three dots */}
+              <strong>Viewed:</strong> {viewCount ?? "…"}
             </p>
           </div>
         </div>
