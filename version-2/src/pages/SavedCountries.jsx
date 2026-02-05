@@ -116,32 +116,7 @@ useEffect(() => {
   })
   console.log(matchedSavedCountries);
   
-  // user Saved Countries POST api request
-// write a function for storing Form dataz
-  const saveOneCountry = async (data) => {
-    const response = await fetch(
-      '/api/save-one-country',
-      {
-        // type of HTTP request
-        method: 'POST',
-        // Specify the type of data being sent
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        // Use stringify method to format data to be sent to backend
-        // use dot notation to get the correct data
-        body: JSON.stringify({
-          country_name: data.country,
-        }),
-      }
-    );
-    // If the response is text type, then use response.text()
-    // If the response is json data, use response.json()
-    const result = await response.text();
-    console.log('result', result);
-  };
   
-
   return (
 // render saved countries
 <>
