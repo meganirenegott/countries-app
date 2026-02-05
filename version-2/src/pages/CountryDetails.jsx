@@ -77,10 +77,25 @@ function CountryDetails({ countriesData }) {
     // If the response is text type, then use response.text()
     // If the response is json data, use response.json()
     const result = await response.text();
-    console.log('result', result);
+    console.log('save one country result', result);
   };
   
-  
+  // Unsave one country post request
+  const unsaveOneCountry = async (data) => {
+    const response = await fetch("/api/unsave-one-country", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        country_name: data.name.common,
+      }),
+    });
+
+    const result = await response.text();
+    console.log("unsave one country result", result);
+  };
+
 
 
   return (
@@ -110,6 +125,12 @@ function CountryDetails({ countriesData }) {
             Save
           </button>
 
+          {/* unsave button on country details */}
+          <button className="save-button" onClick={() => unsaveOneCountry(userSelectedCountry)}>
+            Unsave
+          </button>
+
+          {/* details of country */}
           <div className="country-details-stats">
             <p>
               <strong>Population:</strong> {userSelectedCountry.population.toLocaleString("en-US")}
