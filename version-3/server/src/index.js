@@ -75,7 +75,7 @@ async function getAllSavedCountries() {
 
 async function saveOneCountry(
     country_name) {
-    const result = await db.query(`INSERT INTO saved_countries (country_name) VALUES ($1) ON CONFLICT(country_name) DO NOTHING;`, [country_name]);
+    const result = await db.query(`INSERT INTO saved_countries (country_name) VALUES ($1) ON CONFLICT (country_name) DO NOTHING;`, [country_name]);
     return result.rows;
    
 };
@@ -83,8 +83,7 @@ async function saveOneCountry(
 
 // 6.🔹 POST /unsave-one-country  
 
-async function deleteOneCountry(
-    country_name) {
+async function deleteOneCountry(country_name) {
     const result = await db.query(`DELETE FROM saved_countries
 WHERE country_name = $1`, [country_name]);
     return result.rows;
@@ -161,7 +160,6 @@ app.post("/save-one-country", async (req, res) => {
     const {
         country_name,
     } = req.body;
-
     const savedCountry = await saveOneCountry(country_name);
 
   res.send(`Success! ${country_name} was saved!`);
