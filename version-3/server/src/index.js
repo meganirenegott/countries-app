@@ -185,6 +185,6 @@ app.post("/update-one-country-count", async (req, res) => {
 
     const newCount = await updateOneCountryCount(country_name);
     
-    res.send(`Count: ${newCount.count}`)
+    res.json(newCount)
 });
 
