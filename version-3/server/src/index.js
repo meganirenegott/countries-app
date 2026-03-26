@@ -66,7 +66,6 @@ async function addOneUser(
 
 async function getAllSavedCountries() {
     const result = await db.query("SELECT country_name FROM saved_countries;"
-    [country_name],
 );
   return result.rows;
 }
