@@ -82,7 +82,7 @@ async function saveOneCountry(
 
 // 6.🔹 POST /unsave-one-country  
 
-async function deleteOneCountry(country_name) {
+async function unsaveOneCountry(country_name) {
     const result = await db.query(`DELETE FROM saved_countries
 WHERE country_name = $1`, [country_name]);
     return result.rows;
@@ -166,12 +166,12 @@ app.post("/save-one-country", async (req, res) => {
 
 // 6.🔹 POST /unsave-one-country  
 
-app.post("/delete-one-country", async (req, res) => {
+app.post("/unsave-one-country", async (req, res) => {
     const {
     country_name,
     } = req.body;
 
-    const deleteCountry = await deleteOneCountry(country_name);
+    const unsaveCountry = await unsaveOneCountry(country_name);
 
   res.send(`Success! ${country_name} was unsaved!`);
 });
