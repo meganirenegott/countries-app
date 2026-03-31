@@ -1,81 +1,87 @@
 # Countries App
 
-## Get information about countries via a RESTful API
+## Description
 
-This project is ___________
+"Where in the World?" is a web application that lets users explore detailed information about countries worldwide.  Users can select their favorites and store them in their profile. 
 
 ## 🚀 Live Site
 
-Here's the link to view the live app: ___________
+Here's the link to view the live app: countries-app-megan-2026.netlify.app
 
 ## 🖼️ Screenshots
 
-<img width="1897" height="986" alt="Screenshot 2026-03-31 at 12 45 57 pm" src="https://github.com/user-attachments/assets/68c6173e-7b95-4ca0-a54b-262be8a2cadd" />
-
-<img width="1873" height="673" alt="Screenshot 2026-03-31 at 12 46 16 pm" src="https://github.com/user-attachments/assets/4b879851-ced7-4b90-90f2-7cb573c61224" />
+<img width="1117" height="990" alt="home page with gallery of country cards" src="https://github.com/user-attachments/assets/5aa48ba5-c885-4671-bfd4-c1aed5b4ee76" />
 
 
-
-Here is where you'll include a screenshot of your project to show it off! 
-
-Instructions to include a screenshot into your README file: 
-
-1. Use `Command + Control + Shift + 4` to take a screenshot of your site and copy the screenshot to your clipboard 
-2. Find your Github `README.md` file on the Github website
-3. Edit the site by clicking on the Pencil icon on the top right of the page ✏️
-4. Move your cursor to the position where you want to paste the screenshot, then paste it. Github will convert the pasted screenshot into an `<img>` tag
-5. Select "Commit changes..." to save your changes 
+<img width="1873" height="673" alt="country card with population, capital, region, view count and option to save country as favorite" src="https://github.com/user-attachments/assets/4b879851-ced7-4b90-90f2-7cb573c61224" />
 
 ## ✨ Features
 
 This is what you can do on the app: 
-- ____________
-- ____________
-- ____________
-- ____________
+- Users can learn about a country
+- Save Favorite Countries
+- Responsive UI for a seamless user experience across all devices
+- Real Time Data
 
 ## 🛠️ Tech Stack
 
 **Frontend**
 
-
-
-- **Languages:** ___________
-- **Framework:** ___________
-- **Deployment:** ___________
+- **Languages:** Javascript, React with Vite
+- **Framework:** Deploy frontend server through Github
+- **Deployment:** Netlify
 
 **Server/API**
 
-- **Languages:** ___________
-- **Framework:** ___________
-- **Deployment:** ___________
+- **Languages:** Javascript and Node.js
+- **Framework:** Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend.
+- **Deployment:** Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries.
 
 **Database**
 
-- **Languages:** ___________
-- **Deployment:** ___________
+- **Languages:** Build a server using Node.js and Express
+- **Deployment:** PostgreSQL database using Neon.tech
 
 ## 🔹 API Documentation
 
 These are the API endpoints I built: 
 
-<img width="1247" height="753" alt="Screenshot 2026-03-31 at 12 41 25 pm" src="https://github.com/user-attachments/assets/212525ae-e998-46c3-ae7c-d32a2cfef0fa" />
+<img width="1247" height="753" alt="table with API endpoints and their description" src="https://github.com/user-attachments/assets/212525ae-e998-46c3-ae7c-d32a2cfef0fa" />
 
 
+1. /get-all-users
+2. /get-newest-user
+3. /add-one-user
+4. /update-one-country-count
+5. /get-all-saved-countries
+6. /save-one-country
+7. /unsave-one-country
 
-1. ___________
-2. ___________
-3. ___________
-
-Here's the link to the full API documentation: __________
+Here's the link to the full API documentation: https://github.com/ac-backend/countries-app-instructions/blob/main/version-3/api-documentation.md
 
 ## 🗄️ Database Schema
 
 Here’s the SQL I used to create my tables:  
 
 ```sql
-Put your CREATE TABLE statements here!
-If you have more than one table, include them all.
+CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+name VARCHAR NOT NULL,
+country_name VARCHAR NOT NULL,
+email VARCHAR NOT NULL UNIQUE,
+bio VARCHAR NOT NULL
+);
+
+CREATE TABLE saved_countries (
+saved_country_id SERIAL PRIMARY KEY,
+country_name VARCHAR NOT NULL UNIQUE
+);
+
+CREATE TABLE country_counts (
+country_count_id SERIAL PRIMARY KEY,
+country_name VARCHAR NOT NULL UNIQUE,
+count INTEGER NOT NULL
+);
 ```
 
 ## 💭 Reflections
@@ -87,9 +93,9 @@ If you have more than one table, include them all.
 **What challenged me:** ___________
 
 **Future ideas for how I'd continue building this project:** 
-1. ___________
-2. ___________
-3. ___________
+
+1. Add User Authentication with secure email/password registration and login using Firebase Authentication
+
 
 ## 🙌 Credits & Shoutouts 
 
