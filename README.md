@@ -13,8 +13,6 @@ Here's the link to view the live app: countries-app-megan-2026.netlify.app
 <img width="1117" height="990" alt="home page with gallery of country cards" src="https://github.com/user-attachments/assets/5aa48ba5-c885-4671-bfd4-c1aed5b4ee76" />
 
 
-<img width="1873" height="673" alt="country card with population, capital, region, view count and option to save country as favorite" src="https://github.com/user-attachments/assets/4b879851-ced7-4b90-90f2-7cb573c61224" />
-
 ## ✨ Features
 
 This is what you can do on the app: 
@@ -84,21 +82,12 @@ count INTEGER NOT NULL
 );
 ```
 
-## 💭 Reflections
-
-**What I learned:** ___________
-
-**What I'm proud of:** ___________
-
-**What challenged me:** ___________
-
 **Future ideas for how I'd continue building this project:** 
 
 1. Add User Authentication with secure email/password registration and login using Firebase Authentication
 
 
-## 🙌 Credits & Shoutouts 
+## License
 
-If you used any resources for inspiration, tutorials, or documentation, you can mention them here.
-You can also give a shoutout to anyone who helped you along the way.
+This project is liscened under the MIT license
 
