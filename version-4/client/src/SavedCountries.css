@@ -1,0 +1,104 @@
+/* pages/SavedCountries.css */
+
+.saved-page {
+  display: flex;
+  gap: 48px;
+  padding: 32px;
+}
+
+.saved-left {
+  width: 420px; 
+}
+
+.saved-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.profile-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-input,
+.profile-textarea {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  padding: 10px 12px;
+  font-size: 12px;
+  outline: none;
+  background: #fff;
+}
+
+.profile-textarea {
+  resize: none; 
+  min-height: 140px;
+}
+
+.profile-submit {
+  width: 52px;         
+  padding: 6px 8px;
+  font-size: 11px;
+  border: 1px solid #6b6bff;
+  background: #6b6bff;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.profile-submit:hover {
+  opacity: 0.95;
+}
+
+.saved-right {
+  flex: 1; /* empty space to the right */
+}
+
+/* Accessibility helper (keeps labels for screen readers but hidden visually) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* media queries */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header__inner {
+    height: 64px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .header-link {
+    font-size: 12px;
+  }
+
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page {
+    padding: 24px 0;
+  }
+}
