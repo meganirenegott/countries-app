@@ -59,7 +59,8 @@ This is what you can do on the app:
 
 These are the API endpoints I built: 
 
-<img width="1873" height="673" alt="Screenshot 2026-03-31 at 12 46 16 pm" src="https://github.com/user-attachments/assets/b7dd3783-f23d-4304-8629-b3e230e4dc7f" />
+<img width="1247" height="753" alt="Screenshot 2026-03-31 at 12 41 25 pm" src="https://github.com/user-attachments/assets/212525ae-e998-46c3-ae7c-d32a2cfef0fa" />
+
 
 
 1. ___________
