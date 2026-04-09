@@ -6,8 +6,7 @@ This project is ___________
 
 ## 🚀 Live Site
 
-Here's the link to view the live app: ___________
-
+Here's the link to view the live app: https://countries-app-megan-2026.netlify.app/
 ## 🖼️ Screenshots
 
 Here is where you'll include a screenshot of your project to show it off! 
@@ -32,7 +31,7 @@ This is what you can do on the app:
 
 **Frontend**
 
-
+REST Countries API
 
 - **Languages:** ___________
 - **Framework:** ___________
@@ -52,9 +51,7 @@ This is what you can do on the app:
 ## 🔹 API Documentation
 
 These are the API endpoints I built: 
-1. ___________
-2. ___________
-3. ___________
+
 
 Here's the link to the full API documentation: __________
 
