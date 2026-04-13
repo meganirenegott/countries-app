@@ -25,20 +25,20 @@ This is what you can do on the app:
 
 **Frontend**
 
-- **Languages:** Javascript, React with Vite
-- **Framework:** Deploy frontend server through Github
+- **Languages:** React
+- **Framework:** Deploy frontend server through Github. 
 - **Deployment:** Netlify
 
 **Server/API**
 
 - **Languages:** Javascript and Node.js
-- **Framework:** Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend.
-- **Deployment:** Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries.
+- **Framework:** Express
+- **Deployment:** Render
 
 **Database**
 
-- **Languages:** Build a server using Node.js and Express
-- **Deployment:** PostgreSQL database using Neon.tech
+- **Languages:** PostgreSQL
+- **Deployment:** Neon.tech
 
 ## 🔹 API Documentation
 
