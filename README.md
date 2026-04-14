@@ -25,8 +25,8 @@ This is what you can do on the app:
 
 **Frontend**
 
-- **Languages:** React
-- **Framework:** Deploy frontend server through Github. 
+- **Languages:** Javascript, HTML, CSS
+- **Framework:** React
 - **Deployment:** Netlify
 
 **Server/API**
